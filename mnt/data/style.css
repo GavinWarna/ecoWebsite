@@ -1,0 +1,177 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif; /* Retain natural, elegant font */
+    line-height: 1.6;
+    background-color: #1D3557; /* Dark blue background */
+    color: #F1FAEE; /* Off-white text */
+}
+
+/* Header with new background image */
+header {
+    background-image: url('/mnt/data/image.png'); /* Use the newly uploaded inspiration image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: -1;
+}
+
+header h1 {
+    font-size: 4em;
+    font-weight: 600;
+    color: #F1FAEE; /* Off-white for contrast */
+}
+
+header p {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #F1FAEE; /* Off-white for contrast */
+}
+
+/* Navbar */
+.navbar {
+    background: #457B9D; /* Teal background */
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: #1D3557; /* Retain dark blue color when scrolling */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #F1FAEE;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar ul li:hover {
+    transform: scale(1.1);
+}
+
+/* Mission Section */
+.mission-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #A8DADC; /* Soft blue for section background */
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Lora', serif;
+}
+
+.mission-section h2 {
+    font-size: 2.5em;
+    color: #457B9D; /* Teal */
+    margin-bottom: 20px;
+}
+
+.mission-section p {
+    font-size: 1.2em;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.mission-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mission-item {
+    width: 280px;
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mission-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.mission-item h3 {
+    font-size: 1.2em;
+    color: #F4A261; /* Muted orange accent */
+    margin-bottom: 10px;
+}
+
+.mission-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Team Section */
+.team-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1D3557; /* Dark blue background */
+    color: #F1FAEE;
+    position: relative;
+    font-family: 'Lora', serif;
+}
+
+.team-section h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #F4A261; /* Muted orange for title */
+    margin-bottom: 40px;
+}
+
+.team-leader-img img {
+    border-radius: 50%; /* Circular image */
+    border: 4px solid #457B9D; /* Teal border */
+}
+
+/* Footer */
+footer {
+    background: #1D3557; /* Dark blue footer background */
+    color: #F1FAEE;
+    text-align: center;
+    padding: 15px;
+}

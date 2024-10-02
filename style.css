@@ -1,0 +1,308 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', serif; /* Retain natural, elegant font */
+    line-height: 1.6;
+    background-color: #1D3557; /* Dark blue background */
+    color: #fbfefa; /* Off-white text */
+}
+
+/* Header with new background image */
+header {
+    background-image: url('/mnt/data/image.png'); /* Use the newly uploaded inspiration image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: -1;
+}
+
+header h1 {
+    font-size: 4em;
+    font-weight: 600;
+    color: #F1FAEE; /* Off-white for contrast */
+}
+
+header p {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #F1FAEE; /* Off-white for contrast */
+}
+
+/* Navbar */
+.navbar {
+    background: #0a1f2b00; /* Teal background */
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #F1FAEE;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar ul li:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Mission Section */
+.mission-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), #ffffff 0%);
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+.mission-section h2 {
+    font-size: 2.5em;
+    color:  #092E3C;
+    
+}
+
+.mission-section p {
+    font-size: 1em;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.mission-items {
+    display: flex;
+    justify-content: space-around; /* Stretch the items out */
+    gap: 20px;
+    max-width: 1000px; /* Wider section for mission items */
+    margin: 0 auto; /* Center the items */
+}
+
+.mission-item {
+    background-color: white;
+    padding: 15px; /* Smaller padding for smaller size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mission-item img {
+    width: 50px; /* Smaller icon */
+    margin-bottom: 15px;
+}
+
+.mission-item h3 {
+    font-size: 1.2em; /* Smaller font size */
+    color: #613A2C;
+    margin-bottom: 10px;
+}
+
+.mission-item p {
+    font-size: 1em; /* Smaller paragraph font */
+    color: #666;
+}
+
+/* Team Section */
+.team-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgb(6,28,40);
+    color: #ffffff;
+    position: relative;
+    font-family: 'Poppins', sans-serif; /* Revert to previous font */
+}
+
+.team-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(45, 45, 45, 1));
+    z-index: -1;
+}
+
+.team-section h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #e7e7e7;
+    margin-bottom: 40px;
+}
+
+/* Fade-In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.team-section h3 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.team-leader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.team-leader-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.team-leader-desc {
+    max-width: 500px;
+    text-align: left;
+}
+
+.vice-presidents {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.vp-item {
+    position: relative;
+    width: 150px; /* Smaller size for VP items */
+    text-align: center;
+    cursor: pointer;
+}
+
+.vp-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.vp-item h4, .vp-item p {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.vp-description {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.vp-item:hover .vp-description {
+    display: block; /* Show the description on hover */
+}
+
+.vp-description p {
+    font-size: 0.9em;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Transition Between Sections */
+header {
+    transition: background-color 1s ease-in-out;
+}
+
+
+
+#photo-gallery {
+    background-color: white;
+    padding: 60px 0;
+}
+
+#photo-gallery h2 {
+    color: #1D3557; /* Dark blue color for the title */
+    margin-bottom: 40px;
+}
+
+#photo-gallery .carousel-container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#photo-gallery .carousel-slide {
+    display: inline-block;
+    width: 33%;
+    padding: 10px;
+}
+
+#photo-gallery .carousel-slide img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#photo-gallery .prev, 
+#photo-gallery .next {
+    color: #1D3557; /* Dark blue for arrows */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Adjusts background when scrolling */
+}
+
+.navbar.scrolled {
+    background-color: rgba(6,28,40,0.9); /* Transition for the navbar */
+}

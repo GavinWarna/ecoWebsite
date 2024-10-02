@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTech Initiative</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>EcoTech Initiative</h1>
+            <p>Impacting the environment through STEM</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog Articles</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+    </nav>
+
+    <!-- Our Mission Section -->
+    <section id="mission" class="container mission-section">
+        <h2>Our Mission</h2>
+        <p>We are committed to leveraging the power of computer science, data analysis, and environmental research to foster sustainability. Our goal is to create meaningful projects, conduct insightful research, and educate the community through our initiatives.</p>
+    
+        <div class="mission-items">
+            <div class="mission-item">
+                <img src="icons/environment.png" alt="Environment Icon">
+                <h3>Environment</h3>
+                <p>Utilizing technology to identify and address challenges threatening environmental sustainability.</p>
+            </div>
+            <div class="mission-item">
+                <img src="icons/technology.png" alt="Technology Icon">
+                <h3>Technology</h3>
+                <p>Developing innovative technological solutions for environmental impact, using AI, data science, and programming.</p>
+            </div>
+            <div class="mission-item">
+                <img src="icons/community.png" alt="Community Icon">
+                <h3>Community</h3>
+                <p>Building a community dedicated to environmental sustainability through education, awareness, and collaboration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="container team-section">
+        <h2>Meet Our Team</h2>
+
+        <!-- CEO Section -->
+        <div class="team-leader">
+            <div class="team-leader-img">
+                <img src="placeholder.jpg" alt="Gavin Warnakulasooriya" />
+            </div>
+            <div class="team-leader-desc">
+                <h3>Gavin Warnakulasooriya</h3>
+                <p><strong>CEO/Founder</strong></p>
+                <p>I am the founder and CEO of the EcoTech Initiative. My focus is on leveraging computer science and data analysis to drive environmental sustainability and create meaningful projects.</p>
+            </div>
+        </div>
+
+        <!-- Vice Presidents Section -->
+        <h3>Vice Presidents</h3>
+        <div class="vice-presidents">
+            <div class="vp-item">
+                <img src="placeholder.jpg" alt="Max" />
+                <h4>Max</h4>
+                <p>VP of Design</p>
+            </div>
+            <div class="vp-item">
+                <img src="placeholder.jpg" alt="Aodhfionn" />
+                <h4>Aodhfionn</h4>
+                <p>VP of Projects</p>
+            </div>
+            <div class="vp-item">
+                <img src="placeholder.jpg" alt="Keaton" />
+                <h4>Keaton</h4>
+                <p>VP of Articles</p>
+            </div>
+            <div class="vp-item">
+                <img src="placeholder.jpg" alt="Pranava" />
+                <h4>Pranava</h4>
+                <p>VP of Articles</p>
+            </div>
+            <div class="vp-item">
+                <img src="placeholder.jpg" alt="Joel" />
+                <h4>Joel</h4>
+                <p>VP of Outreach</p>
+            </div>
+            <div class="vp-item">
+                <img src="placeholder.jpg" alt="Daniel" />
+                <h4>Daniel</h4>
+                <p>VP of Outreach</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="photo-gallery" class="container gallery-section" style="padding: 60px 0; text-align: center; background-color: white;">
+        <h2>Photo Gallery</h2>
+        <div class="carousel-container" style="max-width: 80%; margin: 0 auto; position: relative;">
+            <div class="carousel" id="carousel" style="display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                <!-- Images will be injected here by JavaScript -->
+            </div>
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="moveSlide(-1)" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">&#10095;</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><center>&copy; 2024 EcoTech Initiative. All rights reserved.</center></p>
+    </footer>
+
+    <script>
+        // List of image file paths inside the images folder
+        const images = [
+            "images/IMG_7872.jpg",
+            "images/IMG_7879.jpg",// Add more images here
+        ];
+
+        // Function to dynamically add images to the carousel
+        const carousel = document.getElementById("carousel");
+        images.forEach((src) => {
+            const imgDiv = document.createElement("div");
+            imgDiv.classList.add("carousel-slide");
+            imgDiv.style.display = "inline-block";
+            imgDiv.style.width = "66%";
+            imgDiv.style.padding = "10px";
+
+            const img = document.createElement("img");
+            img.src = src;
+            img.style.width = "100%";
+            img.style.borderRadius = "8px";
+
+            imgDiv.appendChild(img);
+            carousel.appendChild(imgDiv);
+        });
+
+        let currentSlide = 0;
+        let slides = document.getElementsByClassName("carousel-slide");
+        showSlide(currentSlide);
+
+        function showSlide(n) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[n].style.display = "inline-block";
+        }
+
+        function moveSlide(n) {
+            currentSlide = (currentSlide + n + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(() => {
+            moveSlide(1); // Automatically move to next slide every 3 seconds
+        }, 5000);
+    </script>
+</body>
+</html>
