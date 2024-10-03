@@ -133,6 +133,7 @@ header p {
 }
 
 .navbar.scrolled {
+    background: linear-gradient(135deg, #2d572c, #1c1c1c);
     background-color: #626F47; /* Add the background when scrolled */
     color: white; /* Change color when scrolled */
 }
@@ -326,7 +327,7 @@ header p {
 .team-section {
     text-align: center;
     padding: 60px 20px;
-    background-color: #626F47;
+    background: linear-gradient(135deg, #2d572c, #1c1c1c);
     color: #ffffff;
     position: relative;
     font-family: 'Poppins', sans-serif; /* Revert to previous font */
@@ -506,7 +507,7 @@ header {
 
 #photo-gallery .prev, 
 #photo-gallery .next {
-    color: #1D3557; /* Dark blue for arrows */
+    color: #37503e; /* Dark blue for arrows */
     font-size: 24px;
     cursor: pointer;
 }
