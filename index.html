@@ -10,13 +10,16 @@
 <body>
     <header>
         <div class="container">
-            <h1>EcoTech Initiative</h1>
+            <h1>The EcoTech Initiative</h1>
             <p>Impacting the environment through STEM</p>
         </div>
     </header>
 
     <nav class="navbar">
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="blog.html">Blog Articles</a></li>
@@ -29,7 +32,7 @@
     <section id="mission" class="container mission-section">
         <h2>Our Mission</h2>
         <p>We are committed to leveraging the power of computer science, data analysis, and environmental research to foster sustainability. Our goal is to create meaningful projects, conduct insightful research, and educate the community through our initiatives.</p>
-    
+        <br>
         <div class="mission-items">
             <div class="mission-item">
                 <img src="icons/environment.png" alt="Environment Icon">
@@ -154,7 +157,7 @@
             const imgDiv = document.createElement("div");
             imgDiv.classList.add("carousel-slide");
             imgDiv.style.display = "inline-block";
-            imgDiv.style.width = "66%";
+            imgDiv.style.width = "90%";
             imgDiv.style.padding = "10px";
 
             const img = document.createElement("img");
@@ -185,6 +188,19 @@
         setInterval(() => {
             moveSlide(1); // Automatically move to next slide every 3 seconds
         }, 5000);
+        window.onscroll = function() {
+        var navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+        };
+        // Toggle the mobile menu with smooth animation
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-menu-active');
+        }
     </script>
 </body>
 </html>

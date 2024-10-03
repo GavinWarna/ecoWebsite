@@ -8,16 +8,16 @@
 body {
     font-family: 'Poppins', serif; /* Retain natural, elegant font */
     line-height: 1.6;
-    background-color: #1D3557; /* Dark blue background */
+    background-color: #000000; /* Dark blue background */
     color: #fbfefa; /* Off-white text */
 }
 
 /* Header with new background image */
 header {
-    background-image: url('/mnt/data/image.png'); /* Use the newly uploaded inspiration image */
+    background-image: url('https://images7.alphacoders.com/135/thumb-1920-1356444.jpeg'); /* Use the newly uploaded inspiration image */
     background-size: cover;
     background-position: center;
-    color: white;
+    color: rgb(0, 0, 0);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -54,14 +54,46 @@ header p {
 
 /* Navbar */
 .navbar {
-    background: #0a1f2b00; /* Teal background */
     color: #fff;
     padding: 10px;
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
-    transition: background 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Initially hide the nav links */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    transition: max-height 0.5s ease; /* Smooth animation */
+    overflow: hidden;
+    max-height: 0; /* Initially collapsed */
+}
+
+/* Show the nav links when menu is active */
+.nav-links.mobile-menu-active {
+    display: flex;
+    max-height: 300px; /* Adjust this height based on number of links */
+}
+
+.navbar.scrolled {
+    background-color: #626F47; /* Add the background when scrolled */
+    color: white; /* Change color when scrolled */
 }
 
 .navbar ul {
@@ -70,28 +102,133 @@ header p {
     justify-content: center;
 }
 
+/* Nav link styles */
 .navbar ul li {
-    margin: 0 15px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .navbar ul li a {
-    color: #F1FAEE;
+    color: white;
     text-decoration: none;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
 }
 
 .navbar ul li:hover {
     transform: scale(1.1);
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        background-color: #626F47; /* Add the background when scrolled */
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.5em;
+    }
+}
 
 
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Ensures the links are spread out */
+        position: static;
+        max-height: none;
+        transition: none;
+    }
+
+    .nav-links li {
+        margin: 0 20px; /* Add more space between links */
+    }
+
+    .nav-links li a {
+        font-size: 1em;
+        padding: 10px 15px; /* Add padding around links */
+    }
+}
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    /* Hide the navigation links and show the menu button on mobile */
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #626F47;
+    }
+
+    /* Show the hamburger menu on mobile */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Show the mobile menu when active */
+    .nav-links.mobile-menu-active {
+        display: flex;
+    }
+
+    /* Style the navigation links for mobile */
+    .navbar ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        font-size: 1.5em;
+    }
+
+    /* Scale down other sections for mobile */
+    .container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .mission-section h2 {
+        font-size: 2em;
+    }
+
+    .mission-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .mission-items {
+        flex-direction: column;
+    }
+}
 /* Mission Section */
 .mission-section {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), #ffffff 0%);
+    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), #FFF8E8 0%);
     color: #333;
     animation: fadeIn 1.5s ease-in-out forwards;
     opacity: 0;
@@ -99,7 +236,7 @@ header p {
 
 .mission-section h2 {
     font-size: 2.5em;
-    color:  #092E3C;
+    color:  #626F47;
     
 }
 
@@ -107,7 +244,7 @@ header p {
     font-size: 1em;
     max-width: 1000px;
     margin: 0 auto;
-    color: #333;
+    color: #674636;
 }
 
 .mission-items {
@@ -121,7 +258,7 @@ header p {
 .mission-item {
     background-color: white;
     padding: 15px; /* Smaller padding for smaller size */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -145,7 +282,7 @@ header p {
 .team-section {
     text-align: center;
     padding: 60px 20px;
-    background-color: rgb(6,28,40);
+    background-color: #626F47;
     color: #ffffff;
     position: relative;
     font-family: 'Poppins', sans-serif; /* Revert to previous font */
@@ -165,7 +302,7 @@ header p {
 .team-section h2 {
     font-size: 2.5em;
     font-weight: 600;
-    color: #e7e7e7;
+    color: #EDF1D6;
     margin-bottom: 40px;
 }
 
@@ -181,7 +318,7 @@ header p {
 
 .team-section h3 {
     font-size: 2em;
-    color: #ffffff;
+    color: #EDF1D6;
     margin-bottom: 20px;
 }
 
@@ -229,13 +366,13 @@ header p {
 
 .vp-item h4, .vp-item p {
     font-size: 1em;
-    color: #ffffff;
+    color: #EDF1D6;
 }
 
 .vp-description {
     display: none;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
+    color: #EDF1D6;
     padding: 10px;
     position: absolute;
     bottom: -80px;
@@ -253,7 +390,38 @@ header p {
 .vp-description p {
     font-size: 0.9em;
 }
+/* Mobile Styles for Team Section */
+@media (max-width: 768px) {
+    .team-leader {
+        flex-direction: column; /* Stack vertically on mobile */
+        align-items: center;
+    }
 
+    .team-leader-img img {
+        width: 150px; /* Smaller image size on mobile */
+        height: 150px;
+    }
+
+    .team-leader-desc {
+        text-align: center; /* Center the text on mobile */
+        max-width: 100%; /* Full width */
+        padding: 10px;
+    }
+
+    .vice-presidents {
+        flex-direction: column; /* Stack VP items vertically */
+        gap: 20px;
+    }
+
+    .vp-item {
+        width: 100%; /* Make VP items take up full width */
+    }
+
+    .vp-item img {
+        width: 80px; /* Smaller image size for VP on mobile */
+        height: 80px;
+    }
+}
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
@@ -267,12 +435,12 @@ header {
 
 
 #photo-gallery {
-    background-color: white;
+    background-color: EDF1D6;
     padding: 60px 0;
 }
 
 #photo-gallery h2 {
-    color: #1D3557; /* Dark blue color for the title */
+    color: #40513B; /* Dark blue color for the title */
     margin-bottom: 40px;
 }
 
@@ -303,6 +471,3 @@ header.scrolled {
     background-color: rgba(0, 0, 0, 0.8); /* Adjusts background when scrolling */
 }
 
-.navbar.scrolled {
-    background-color: rgba(6,28,40,0.9); /* Transition for the navbar */
-}
