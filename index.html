@@ -11,7 +11,8 @@
     <header>
         <div class="container">
             <h1>The EcoTech Initiative</h1>
-            <p>Impacting the environment through STEM</p>
+            <p id="tagline"></p>
+            <br>
             <a href="#join-us" class="join-us-btn-header">Join Us!</a> <!-- Join Us Button -->
         </div>
     </header>
@@ -212,6 +213,25 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('mobile-menu-active');
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            const text = "Impacting the environment through STEM.";
+            let index = 0;
+            let speed = 100; // Adjust typing speed (in milliseconds)
+
+            function typeEffect() {
+                if (index < text.length) {
+                    if (index == text.length-2) {
+                        speed = 1000;
+                    }
+                    document.getElementById('tagline').innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, speed);
+                }
+            }
+
+            typeEffect(); // Start typing effect
+        });
+
     </script>
 </body>
 </html>
