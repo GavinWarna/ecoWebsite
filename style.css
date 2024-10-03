@@ -28,6 +28,47 @@ header {
     position: relative;
     z-index: 1;
 }
+/* Join Us Button in Header */
+.join-us-btn-header {
+    display: inline-block;
+    padding: 15px 50px;
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #4caf50;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.join-us-btn-header:hover {
+    background-color: #4caf50;
+    color: #fff;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.join-us-btn-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.4), rgba(76, 175, 80, 0));
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.join-us-btn-header:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 
 header::before {
     content: '';
@@ -146,6 +187,9 @@ header p {
 
 /* Desktop Styles */
 @media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
     .nav-links {
         display: flex;
         flex-direction: row;
@@ -470,4 +514,139 @@ header {
 header.scrolled {
     background-color: rgba(0, 0, 0, 0.8); /* Adjusts background when scrolling */
 }
+/* Join Us Section */
+.join-us-section {
+    background: linear-gradient(135deg, #2d572c, #1c1c1c); /* Earthy green and dark contrast */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.join-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('your-background-image-url.jpg'); /* Set background image */
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.join-us-content {
+    z-index: 1;
+}
+
+.join-us-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.join-us-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+/* Join Us Section */
+.join-us-section {
+    background: linear-gradient(135deg, #2d572c, #1c1c1c);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.join-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('your-background-image-url.jpg');
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.join-us-content {
+    z-index: 1;
+}
+
+.join-us-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.join-us-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+/* Animated Buttons */
+.join-us-btn, .contact-us-btn, .debrief-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #4caf50;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.join-us-btn:hover, .contact-us-btn:hover, .debrief-btn:hover {
+    color: #fff;
+    background-color: #4caf50;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.join-us-btn::before, .contact-us-btn::before, .debrief-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.4), rgba(76, 175, 80, 0));
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.join-us-btn:hover::before, .contact-us-btn:hover::before, .debrief-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Animation for fading text */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 
